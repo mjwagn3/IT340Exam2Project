@@ -1,10 +1,9 @@
 import Naive_Bayesian_Luke_Michael as nbc
 
-# Multi-variate Bernoulli Event Model
-# Luke Oess and Michael Wagner
-
-
 """
+Multi-variate Bernoulli Event Model
+Luke Oess and Michael Wagner
+
 notes (delete when finished):
 
 take 500 ham, 500 spam for training set, rest for testing set 
@@ -26,7 +25,6 @@ testing_data = nbc.testing_data
 ham_word_occurences = {}
 spam_word_occurences = {}
 
-
 # add 1 to # occurences of a given word
 for i in range(1000): 
     if i <= 500:
@@ -37,6 +35,10 @@ for i in range(1000):
         words = training_data[i].split()
         for word in words: 
             spam_word_occurences[word] = spam_word_occurences.get(word, 0) + 1
+
+# total word count
+ham_word_count = len(ham_word_occurences)
+spam_word_count = len(spam_word_occurences)
 
 
         
