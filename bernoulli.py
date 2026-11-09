@@ -1,3 +1,5 @@
+import Naive_Bayesian_Luke_Michael as nbc
+
 # Multi-variate Bernoulli Event Model
 # Luke Oess and Michael Wagner
 
@@ -18,8 +20,28 @@ flow:
     num_occurences/total_word_count = probability of a given word 
 """
 
+training_data = nbc.training_data
+testing_data = nbc.testing_data
+
 ham_word_occurences = {}
 spam_word_occurences = {}
+
+
+# add 1 to # occurences of a given word
+for i in range(1000): 
+    if i <= 500:
+        words = training_data[i].split()
+        for word in words: 
+            ham_word_occurences[word] = ham_word_occurences.get(word, 0) + 1 
+    else: 
+        words = training_data[i].split()
+        for word in words: 
+            spam_word_occurences[word] = spam_word_occurences.get(word, 0) + 1
+
+
+        
+
+
 
 
 
