@@ -22,6 +22,8 @@ flow:
 training_data = nbc.training_data
 testing_data = nbc.testing_data
 
+
+
 ham_word_occurences = {}
 spam_word_occurences = {}
 
@@ -40,8 +42,6 @@ for i in range(1000):
 ham_word_count = len(ham_word_occurences)
 spam_word_count = len(spam_word_occurences)
 
-
-        
 
 
 
