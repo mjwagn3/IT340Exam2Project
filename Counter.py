@@ -99,31 +99,31 @@ class BernoulliCounter(Counter):
         
         
 
-class MultinomialCounter(Counter):
-    def __init__(self):
-        super().__init__()
+# class MultinomialCounter(Counter):
+#     def __init__(self):
+#         super().__init__()
 
-    def count_spam(self,data):
-        if self._has_count_spam:
-            raise RuntimeError("Spam instances has been counted")
-        for email in data:
-            email_tok = email.split()
-            self._num_of_spam_emails+=1
-            for word in email_tok:
-                if word not in self._spam_counts:
-                    self._spam_counts[word] = 0
-                self._spam_counts[word] += 1
-                self._words_appear.add(word)
-        self._has_count_spam = True
-    def count_ham(self,data):
-        if self._has_count_ham:
-            raise RuntimeError("Ham instances has been counted")
-        for email in data:
-            email_tok = email.split()
-            self._num_of_ham_emails += 1 
-            for word in email_tok:
-                if word not in self._ham_counts:
-                    self._ham_counts[word] = 0
-                self._ham_counts[word] += 1 
-                self._words_appear.add(word)
-        self._has_count_ham = True
+#     def count_spam(self,data):
+#         if self._has_count_spam:
+#             raise RuntimeError("Spam instances has been counted")
+#         for email in data:
+#             email_tok = email.split()
+#             self._num_of_spam_emails+=1
+#             for word in email_tok:
+#                 if word not in self._spam_counts:
+#                     self._spam_counts[word] = 0
+#                 self._spam_counts[word] += 1
+#                 self._words_appear.add(word)
+#         self._has_count_spam = True
+#     def count_ham(self,data):
+#         if self._has_count_ham:
+#             raise RuntimeError("Ham instances has been counted")
+#         for email in data:
+#             email_tok = email.split()
+#             self._num_of_ham_emails += 1 
+#             for word in email_tok:
+#                 if word not in self._ham_counts:
+#                     self._ham_counts[word] = 0
+#                 self._ham_counts[word] += 1 
+#                 self._words_appear.add(word)
+#         self._has_count_ham = True
