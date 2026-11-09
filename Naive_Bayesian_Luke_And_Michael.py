@@ -36,4 +36,6 @@ randomState.shuffle(All_Spam)
 training_data = All_Ham[:number_of_training_emails] + All_Spam[:number_of_training_emails]
 testing_data = All_Ham[number_of_training_emails:] + All_Spam[number_of_training_emails:] 
 
+
+print(training_data)
 #important: use .split() to separate the words 
