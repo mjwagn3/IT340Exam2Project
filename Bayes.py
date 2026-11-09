@@ -16,7 +16,7 @@ bc_trc = BernoulliCounter()
 bc_trc.count_spam(spam_trd)
 bc_trc.count_ham(ham_trd)
 
-#multinomial counter train counter
-mc_trc = MultinomialCounter()
-mc_trc.count_spam(spam_trd)
-mc_trc.count_ham(ham_trd)
+# #multinomial counter train counter
+# mc_trc = MultinomialCounter()
+# mc_trc.count_spam(spam_trd)
+# mc_trc.count_ham(ham_trd)
