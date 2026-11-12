@@ -1,37 +1,4 @@
-First, I want to address an important aspect of how my partner and I approached this project. 
-I originally wanted to use object\-oriented programming to solve the problem. My idea was to 
-divide the program into multiple classes, with each class having a specific responsibility. 
-For example, one class would handle counting words, another would calculate probabilities, 
-and a third would evaluate the model's predictions.
-
-I believed this approach would make the code more organized and easier to understand. It 
-would also allow us to separate different parts of the program and make future modifications 
-simpler. These are principles that we have learned throughout our computer science courses.
-However, my partner implemented the project using a single file. While I believe my design 
-would have been cleaner and more maintainable, using one file was more efficient for this 
-assignment because the program only has a single task to perform. Therefore, this report 
-will explain how the implementation works, why the model is only achieving about 70% 
-accuracy, and what changes could be made to improve its performance.
-
-One of the biggest factors affecting the model's accuracy is the presence of filler words, 
-also known as stop words. Examples include words such as "the," "a," "an," and many other
-common words. These words frequently appear in both ham and spam emails, but they provide 
-very little useful information about whether an email is spam.
-
-For example, consider the following spam emails:
-
-- "You are the winner, claim your free prize."
-- "You are the best, but only if you send the money."
-
-Now consider these ham emails:
-
-- "Can you send me the reports?"
-- "The weather outside is terrible. Are you going to be okay?"
-
-In both spam and ham emails, words such as "the," "are," and "you" appear regularly. Because 
-these words occur in both categories, they do not help the classifier determine whether an 
-email is spam or ham. In contrast, words such as "winner," "free," "prize," and "money" are more 
-strongly associated with spam emails and provide useful information for classification.
-
-As a result, including large numbers of filler words in the calculations can introduce noise into the model. While individual stop words may not significantly harm the classifier, collectively they can reduce the impact of more informative words and contribute to lower overall accuracy. Removing these words before training the model could improve performance and help the classifier focus on the words that are most useful for distinguishing spam from ham emails.
-
+1.	What caused low accuracy
+Our model achieves only about 70% accuracy because it is learning from noise in the dataset. Noise consists of words that occur frequently but do not help distinguish between spam and ham emails. Examples include common words such as "the," "a," "with," "this," and many others. These words appear in both spam and ham emails, so they provide little useful information about the email's category. Because the model learns from these words, they can influence the classification process even though they have little predictive value. As a result, the model may place less emphasis on more informative words and incorrectly classify some emails.
+2.	Why it can happen:
+The reason this can happen is that we did not filter out common words before classifying the emails. Words such as "the," "a," and "with" appear frequently in both spam and ham emails. If we do not remove these words during preprocessing, the model will learn from them even though they provide little useful information. By filtering out these common words, we tell the model to ignore them and focus on more informative words that help distinguish between spam and ham emails. This reduces noise in the dataset and can improve classification accuracy.
